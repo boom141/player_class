@@ -2,6 +2,7 @@ from scripts import *
 from scripts.entity.player import player
 from scripts.world.map import map_manager
 
+
 def main():
     last_time = time.time()
 
@@ -20,6 +21,8 @@ def main():
         map.render_tiles(SCREEN)
 
         player1.controller(delta_time,map.tile_rects)
+        player1.player_event_handler()
+        player1.player_particles(SCREEN)
         player1.render(SCREEN,delta_time)
 
         # SCREEN.blit(pygame.transform.scale(WINDOW, SCREEN_DIMENSION),(0,0))

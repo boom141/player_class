@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import*
 from scripts.entity.animation import animation_manager
 
+
 class entity_manager:
 	def __init__(self, player_rect, player_offset):
 		self.rect = player_rect
@@ -67,9 +68,7 @@ class entity_manager:
 			self.momentum_Y = self.jump_height
 		
 		self.handle_collision(tile_rects)
-		if self.collision_types['bottom']:
-			self.jump_once = True
-
+		
 	def entity_state(self):
 		self.init_state = 'idle'
 		if self.jump_once == False and self.momentum_Y < 0:
